@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENTREGA 1 JAVASCRIPT</title>
+    <title>Simulador de Cajero</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <h1>Simulador de Cajero</h1>
+    <div id="login" class="container">
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="contrasenia" placeholder="PIN">
+        <button onclick="Cajero.iniciarSesion()">Iniciar Sesión</button>
+    </div>
+    <div id="menu" class="container hidden">
+        <button onclick="Cajero.mostrarTransferenciaDeposito()">Transferencia/Depósito</button>
+        <button onclick="Cajero.mostrarExtraccion()">Extracción/Adelanto</button>
+        <button onclick="Cajero.consultarSaldo()">Consultar Saldo</button>
+        <button onclick="Cajero.verHistorialTransacciones()">Ver Historial de Transacciones</button>
+    </div>
+    <div id="operaciones" class="container hidden">
+        <!-- Aquí se mostrarán los formularios de operaciones -->
+    </div>
+    <div id="mensaje" class="container"></div>
+
+    <!-- Vincula tu archivo JavaScript -->
     <script src="./js/main.js"></script>
 </body>
 </html>
