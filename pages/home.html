@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Banking</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="home-container">
+        <header>
+            <h1>Bienvenido, <span id="userGreeting">Usuario</span></h1>
+            <button id="logoutButton">Cerrar sesión</button>
+        </header>
+        <div class="balance-section">
+            <h2>Saldo Actual</h2>
+            <p id="currentBalance">Cargando...</p>
+        </div>
+        <div class="buttons">
+            <button onclick="showSection('transferSection')">Transferencias</button>
+            <button onclick="showSection('investSection')">Inversiones</button>
+            <button onclick="showSection('checkBalanceSection')">Consultar Saldo</button>
+            <button onclick="showSection('lastMovementsSection')">Últimos Movimientos</button>
+        </div>
+        <div id="transferSection" class="section" style="display:none;">
+            <h2>Transferencias</h2>
+            <form id="transferForm">
+                <label for="transferTo">Destinatario:</label>
+                <input type="text" id="transferTo" name="transferTo" required>
+                <label for="transferAmount">Monto:</label>
+                <input type="number" id="transferAmount" name="transferAmount" required>
+                <button type="submit">Transferir</button>
+            </form>
+        </div>
+        <div id="investSection" class="section" style="display:none;">
+            <h2>Inversiones</h2>
+            <form id="investForm">
+                <label for="investmentAmount">Monto a Invertir:</label>
+                <input type="number" id="investmentAmount" name="investmentAmount" required>
+                <button type="submit">Invertir</button>
+            </form>
+        </div>
+        <div id="checkBalanceSection" class="section" style="display:none;">
+            <h2>Consultar Saldo</h2>
+            <p>Tu saldo actual es: <span id="balanceAmount">Cargando...</span></p>
+        </div>
+        <div id="lastMovementsSection" class="section" style="display:none;">
+            <h2>Últimos Movimientos</h2>
+            <ul id="movementsList">
+                
+            </ul>
+        </div>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -3,29 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Cajero</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Login Home Banking</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Simulador de Cajero</h1>
-    <div id="login" class="container">
-        <input type="text" id="usuario" placeholder="Usuario">
-        <input type="password" id="contrasenia" placeholder="PIN">
-        <button onclick="Cajero.iniciarSesion()">Iniciar Sesión</button>
+    <div class="login-container">
+        <h1>Login Home Banking</h1>
+        <form id="loginForm">
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" required minlength="7" maxlength="9">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required minlength="5" pattern="(?=.*[A-Z]).{5,}">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required minlength="4" maxlength="6">
+            <button type="submit">Ingresar</button>
+        </form>
+        <p>¿No tienes una cuenta? <a href="#" id="createAccountLink">Crea una cuenta</a></p>
     </div>
-    <div id="menu" class="container hidden">
-        <button onclick="Cajero.mostrarTransferenciaDeposito()">Transferencia/Depósito</button>
-        <button onclick="Cajero.mostrarExtraccion()">Extracción/Adelanto</button>
-        <button onclick="Cajero.consultarSaldo()">Consultar Saldo</button>
-        <button onclick="Cajero.verHistorialTransacciones()">Ver Historial de Transacciones</button>
-    </div>
-    <div id="operaciones" class="container hidden">
-        <!-- Aquí se mostrarán los formularios de operaciones -->
-    </div>
-    <div id="mensaje" class="container"></div>
 
-    <!-- Vincula tu archivo JavaScript -->
-    <script src="./js/main.js"></script>
+    <div class="register-container" style="display: none;">
+        <h1>Crear Cuenta</h1>
+        <form id="registerForm">
+            <label for="regDni">DNI:</label>
+            <input type="text" id="regDni" name="dni" required minlength="7" maxlength="9">
+            <label for="regUsername">Usuario:</label>
+            <input type="text" id="regUsername" name="username" required minlength="5" pattern="(?=.*[A-Z]).{5,}">
+            <span id="usernameError" class="error-message"></span>
+            <label for="regPassword">Contraseña:</label>
+            <input type="password" id="regPassword" name="password" required minlength="4" maxlength="6">
+            <button type="submit">Registrar</button>
+        </form>
+        <p>¿Ya tienes una cuenta? <a href="#" id="loginLink">Inicia sesión</a></p>
+    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
